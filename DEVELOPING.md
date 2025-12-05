@@ -92,8 +92,38 @@ So that should be it! You should now be able to access the following URLs:
  - <http://127.0.0.1:8000/admin> - The Django admin page (try the super user)
  - <http://127.0.0.1:8983/solr> - Solr admin page
  - 127.0.0.1:5900 - A VNC server to the selenium machine (it doesn't serve http though)
- 
+
  A good next step is to [run the test suite](#testing) to verify that your development server is configured correctly.
+
+### Load sample data for local analytics
+
+To populate the UI and analytics dashboards with representative docket and opinion data, load a few bundled fixtures once the
+stack is running. From your host machine run:
+
+```
+docker exec -it cl-django python /opt/courtlistener/manage.py loaddata \
+    cl/search/fixtures/court_data_truncated.json \
+    cl/search/fixtures/functest_opinions.json \
+    cl/api/fixtures/recap_docs.json \
+    cl/recap/fixtures/recap_processing_queue_query_counts.json
+```
+
+This seeds courts, opinions, and sample RECAP docket content so you have documents to browse in the Django admin and searchable
+material for Solr. You can add additional fixtures from `cl/people_db/fixtures/` or `cl/visualizations/fixtures/` the same way
+if you need more demo data. Because fixture loading does not write to Solr automatically, run a small reindex pass (with Celery
+workers running) to make the sample records searchable:
+
+```
+docker exec -it cl-django python /opt/courtlistener/manage.py cl_update_index \
+    --type search.Opinion --everything --update --noinput
+docker exec -it cl-django python /opt/courtlistener/manage.py cl_update_index \
+    --type search.RECAPDocument --everything --update --noinput
+```
+
+After loading and indexing data, confirm that:
+
+- <http://127.0.0.1:8000/admin> shows the seeded objects and lets you authenticate with your superuser.
+- <http://127.0.0.1:8983/solr> lists collections and allows simple queries against your indexed sample data.
 
 [cl-solr]: https://github.com/freelawproject/courtlistener-solr-server
 
