@@ -1,0 +1,22 @@
+{
+  "voice_pack": "constrained",
+  "engine": "kokoro",
+  "voices": {
+    "NARRATOR": "af_heart",
+    "OBOBO": "am_michael",
+    "WENDY": "bf_emma",
+    "RAEL": "af_bella",
+    "NESEN": "bf_isabella",
+    "SHEN": "am_adam",
+    "NEMRA": "af_nicole",
+    "HAMARETH": "bm_george",
+    "JOMM": "bm_lewis"
+  },
+  "lexicon": {
+    "OBOBO": "oh-BOH-boh"
+  },
+  "styles": {
+    "the_question": {"speed": 0.85},
+    "chapter_header": {"speed": 1.0, "lead_silence_ms": 500, "trail_silence_ms": 500}
+  }
+}
