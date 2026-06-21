@@ -43,3 +43,12 @@ cl/settings/google_auth.json
 cl/assets/media/lasc-data/*/
 
 cl/node_modules
+
+# Local .NET tooling/build outputs
+.tools/
+**/bin/
+**/obj/
+
+# Local TTS endpoint runtime state
+.run/
+tools/local-tts-endpoint/.run/
