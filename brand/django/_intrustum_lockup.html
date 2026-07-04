@@ -1,0 +1,28 @@
+{% load static %}
+{% comment %}
+  INTRUSTUM lockup — Django include wired to this project's static pipeline.
+
+  Usage in a template:
+    {% include "includes/_intrustum_lockup.html" %}
+    {% include "includes/_intrustum_lockup.html" with variant="running" href="/" %}
+    {% include "includes/_intrustum_lockup.html" with descriptor="Governed Matter Administration & Recovery" %}
+
+  Wiring (one-time):
+    1. Copy brand/assets/*.svg  -> cl/assets/static-global/svg/intrustum/
+    2. Copy brand/brand.css     -> cl/assets/static-global/css/intrustum.css
+       and load it in base.html:  <link href="{{ STATIC_PREFIX }}css/intrustum.css" rel="stylesheet">
+    3. Copy this file           -> cl/assets/templates/includes/_intrustum_lockup.html
+{% endcomment %}
+<a class="intrustum-lockup{% if variant %} intrustum-lockup--{{ variant }}{% endif %}{% if descriptor %} intrustum-lockup--descriptor{% endif %}"
+   href="{{ href|default:'/' }}" aria-label="Intrustum — home">
+  {% if descriptor %}
+    <span style="display:inline-flex;align-items:baseline;gap:.6em">
+      <img class="intrustum-lockup__mark" src="{% static 'svg/intrustum/mark-block.svg' %}" alt="">
+      <span class="intrustum-lockup__wordmark">Intrustum</span>
+    </span>
+    <span class="intrustum-lockup__label">{{ descriptor }}</span>
+  {% else %}
+    <img class="intrustum-lockup__mark" src="{% static 'svg/intrustum/mark-block.svg' %}" alt="">
+    <span class="intrustum-lockup__wordmark">Intrustum</span>
+  {% endif %}
+</a>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intrustum — Mark Reference</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    body { margin:0; background:var(--intrustum-paper); color:var(--intrustum-ink);
+           font-family:var(--intrustum-support-font); -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:960px; margin:0 auto; padding:48px 24px 96px; }
+    h1 { font-family:var(--intrustum-wordmark-font); font-weight:700; letter-spacing:.12em;
+         text-transform:uppercase; font-size:28px; margin:0 0 4px; }
+    .sub { color:var(--intrustum-graphite); letter-spacing:.06em; text-transform:uppercase;
+           font-size:12px; margin-bottom:40px; }
+    section { border-top:1px solid rgba(26,28,32,.12); padding:28px 0; }
+    h2 { font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+         color:var(--intrustum-graphite); margin:0 0 20px; }
+    .row { display:flex; flex-wrap:wrap; gap:40px; align-items:flex-end; }
+    figure { margin:0; }
+    figcaption { font-size:11px; color:var(--intrustum-graphite); margin-top:10px;
+                 letter-spacing:.04em; }
+    .swatches { display:flex; gap:20px; flex-wrap:wrap; }
+    .swatch { font-size:11px; letter-spacing:.04em; }
+    .chip { width:72px; height:48px; border-radius:2px; border:1px solid rgba(26,28,32,.12); }
+    img.demo { display:block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Intrustum</h1>
+    <div class="sub">Mark Reference · Production Handoff v1.0</div>
+
+    <section>
+      <h2>Wordmark lockup (§3f)</h2>
+      <div class="row" style="font-size:40px">
+        <a class="intrustum-lockup" href="#" aria-label="Intrustum">
+          <img class="intrustum-lockup__mark" src="assets/mark-block.svg" alt="">
+          <span class="intrustum-lockup__wordmark">Intrustum</span>
+        </a>
+      </div>
+      <div class="row" style="font-size:34px; margin-top:32px">
+        <a class="intrustum-lockup intrustum-lockup--descriptor" href="#" aria-label="Intrustum">
+          <span style="display:inline-flex;align-items:baseline;gap:.6em">
+            <img class="intrustum-lockup__mark" src="assets/mark-block.svg" alt="">
+            <span class="intrustum-lockup__wordmark">Intrustum</span>
+          </span>
+          <span class="intrustum-lockup__label">Governed Matter Administration &amp; Recovery</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Marks</h2>
+      <div class="row">
+        <figure><img class="demo" src="assets/mark-block.svg" width="120" height="120" alt="Primary block mark">
+          <figcaption>Primary block mark</figcaption></figure>
+        <figure><img class="demo" src="assets/mark-outline.svg" width="120" height="120" alt="Secondary outline mark">
+          <figcaption>Secondary outline</figcaption></figure>
+        <figure><img class="demo" src="assets/seal-full.svg" width="160" height="160" alt="Full seal">
+          <figcaption>Full seal (≥96px)</figcaption></figure>
+        <figure><img class="demo" src="assets/seal-micro.svg" width="72" height="72" alt="Micro seal">
+          <figcaption>Micro seal (≤48px)</figcaption></figure>
+        <figure><img class="demo" src="assets/seal-die.svg" width="120" height="120" alt="Deboss die"
+                     style="background:#e9e4da; border-radius:2px">
+          <figcaption>Deboss die (blind)</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Favicon legibility (§9.8)</h2>
+      <div class="row" style="align-items:flex-end">
+        <figure><img src="assets/favicon.svg" width="16" height="16" alt=""><figcaption>16px</figcaption></figure>
+        <figure><img src="assets/favicon.svg" width="32" height="32" alt=""><figcaption>32px</figcaption></figure>
+        <figure><img src="assets/favicon.svg" width="48" height="48" alt=""><figcaption>48px</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Color, exactly (§4)</h2>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#1A1C20"></div>Ink · #1A1C20</div>
+        <div class="swatch"><div class="chip" style="background:#5A5D63"></div>Graphite · #5A5D63</div>
+        <div class="swatch"><div class="chip" style="background:#8C6A3F"></div>Bronze · #8C6A3F</div>
+        <div class="swatch"><div class="chip" style="background:#FAF8F4"></div>Paper · #FAF8F4</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#000" stroke-width="5"/>
+  <path d="M 70,72 H 130 L 117,124 H 83 Z" fill="#000"/>
+  <text font-family="interface, sans-serif" font-size="13" letter-spacing="8" fill="#000" font-weight="600">
+    <textPath href="#dieArc" startOffset="50%" text-anchor="middle">MMXXIII</textPath>
+  </text>
+  <defs><path id="dieArc" d="M 24,100 A 76,76 0 0 0 176,100"/></defs>
+</svg>
